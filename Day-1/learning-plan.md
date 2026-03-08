@@ -1,5 +1,3 @@
-# 🚀 DevOps Learning Plan
-
 ## 👋 Introduction
 
 Hi, I'm **Aman Sharma**.  
