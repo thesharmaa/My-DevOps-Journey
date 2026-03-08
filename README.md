@@ -34,7 +34,7 @@ During this journey I will learn and practice:
 
 ## 🎯 DevOps Roadmap
 
-- [ ] Day 01 – DevOps Learning Plan
+- [X] Day 01 – DevOps Learning Plan
 - [ ] Networking Basics
 - [ ] Linux Fundamentals
 - [ ] Git & GitHub
@@ -55,13 +55,17 @@ During this journey I will learn and practice:
 ---
 
 ## 📂 Repository Structure
+
+```
 devops-learning-journey
 │
 ├── day-01
-│ └── learning-plan.md
+│   └── learning-plan.md
 │
 ├── day-02
+│
 ├── day-03
+```
 
 
 
