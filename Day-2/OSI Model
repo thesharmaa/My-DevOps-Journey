@@ -1,0 +1,114 @@
+# OSI Model (Open Systems Interconnection)
+
+The **OSI Model** is a 7-layer conceptual framework that explains how data travels from one device to another over a network.
+
+---
+
+## 1. Application Layer
+The **Application Layer** is the closest layer to the user. It allows applications to interact with the network.
+
+**Examples**
+- HTTP / HTTPS – Web browsing
+- FTP – File transfer
+- SMTP – Email services
+
+---
+
+## 2. Presentation Layer
+The **Presentation Layer** ensures that data is in a readable format for the receiving system.
+
+**Functions**
+- Data formatting
+- Encryption and decryption
+- Data compression
+
+**Examples**
+- SSL/TLS encryption
+- Data formats like JPEG, MP3
+
+---
+
+## 3. Session Layer
+The **Session Layer** establishes, manages, and terminates communication sessions between two devices.
+
+**Functions**
+- Session establishment
+- Session maintenance
+- Session termination
+
+---
+
+## 4. Transport Layer
+The **Transport Layer** ensures reliable end-to-end communication.
+
+**Functions**
+- Breaks data into segments
+- Adds port numbers
+- Maintains sequence numbers
+- Flow control and error handling
+
+**Protocols**
+- TCP
+- UDP
+
+---
+
+## 5. Network Layer
+The **Network Layer** determines where data should go using logical addressing.
+
+**Functions**
+- IP addressing
+- Routing
+- Path determination
+
+**Protocols**
+- IP
+- ICMP
+
+**Devices**
+- Routers
+
+---
+
+## 6. Data Link Layer
+The **Data Link Layer** handles communication within the local network using MAC addresses.
+
+**Functions**
+- Frame creation
+- MAC addressing
+- Error detection
+
+**Devices**
+- Switches
+
+---
+
+## 7. Physical Layer
+The **Physical Layer** transmits raw data as electrical or optical signals.
+
+**Examples**
+- Ethernet cables
+- Fiber optic cables
+- Wireless signals
+
+---
+
+## OSI Model Layers Summary
+
+| Layer | Name | Key Function |
+|------|------|-------------|
+| 7 | Application | User interaction with network |
+| 6 | Presentation | Encryption, formatting |
+| 5 | Session | Session management |
+| 4 | Transport | Reliable communication |
+| 3 | Network | Routing and IP addressing |
+| 2 | Data Link | MAC addressing |
+| 1 | Physical | Data transmission |
+
+---
+
+## Memory Trick
+
+**A**ll **P**eople **S**eem **T**o **N**eed **D**ata **P**rocessing  
+
+(Application → Presentation → Session → Transport → Network → Data Link → Physical)
