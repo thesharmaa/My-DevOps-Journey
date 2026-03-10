@@ -40,7 +40,6 @@ During this journey I will learn and practice:
 - [ ] Git & GitHub
 - [ ] Docker
 - [ ] Kubernetes
-- [ ] Argo CD
 - [ ] Github Actions
 - [ ] AWS
 - [ ] Terraform
