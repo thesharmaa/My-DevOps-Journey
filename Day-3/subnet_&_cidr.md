@@ -17,7 +17,7 @@ Devices in this subnet:
 ...  
 192.168.1.254
 
-All these devices belong to the **same subnet**.
+All these devices belong to the **same subnet** where 192.168.1 define the network portion, and the last octet (.1 to .254) identifies individual devices within that network.
 
 ---
 ### How Subnet is Created
