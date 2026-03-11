@@ -40,6 +40,7 @@ Network = `192.168.1.0`
 Devices = `.1` to `.254`
 
 We use 255 in a subnet mask because it represents 8 binary ones (11111111), which tells the computer that all bits in this octet belong to the network portion.We use 255 in a subnet mask because it represents 8 binary ones (11111111), which tells the computer that all bits in this octet belong to the network portion.
+
 ---
 
 ### Types of Subnets
