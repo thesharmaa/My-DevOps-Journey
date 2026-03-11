@@ -35,7 +35,7 @@ During this journey I will learn and practice:
 ## 🎯 DevOps Roadmap
 
 - [X] Day 01 – DevOps Learning Plan
-- [ ] Networking Basics
+- [X] Networking Basics
 - [ ] Linux Fundamentals
 - [ ] Git & GitHub
 - [ ] Docker
