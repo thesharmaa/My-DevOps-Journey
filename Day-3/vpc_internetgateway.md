@@ -4,7 +4,7 @@
 A VPC is a **private virtual network** inside a cloud provider where you can deploy resources securely. 
 
 **Uses:**  
-- Isolated cloud network  
+- Isolated cloud network
 - Secure deployment of resources  
 
 ---
