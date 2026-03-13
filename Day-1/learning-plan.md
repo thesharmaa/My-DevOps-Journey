@@ -28,7 +28,7 @@ I am starting my journey into **DevOps ☁️ and Cloud Engineering** to build s
 ### 🧠 Experience with
 
 - 🐧 Linux environments  
-- 🗄️ SQL-based query languages  
+- 🗄️ SQL based query languages  
 - ⚙️ Backend configuration changes  
 - 🛠️ Troubleshooting client issues in production systems  
 
