@@ -1,6 +1,6 @@
 # OSI Model (Open Systems Interconnection)
 
-The **OSI Model** is a 7-layer conceptual framework that explains how data travels from one device to another over a network
+The **OSI Model** is a 7 layer conceptual framework that explains how data travels from one device to another over a network
 
 ---
 
