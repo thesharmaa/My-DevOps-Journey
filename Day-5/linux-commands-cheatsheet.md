@@ -117,3 +117,16 @@ systemctl status nginx
 journalctl -u nginx -f
 ss -tulnp
 curl -I localhost
+
+---
+
+## 🧠 QUICK MENTAL MODEL (VERY IMPORTANT)
+
+| Tool    | Checks                             |
+| ------- | ---------------------------------- |
+| top     | CPU issues                         |
+| htop    | CPU + process interaction          |
+| uptime  | system load trend                  |
+| free -m | memory pressure                    |
+| vmstat  | system bottleneck (CPU/memory/I/O) |
+| iostat  | disk bottleneck                    |
