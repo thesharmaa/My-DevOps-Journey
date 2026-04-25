@@ -84,7 +84,7 @@ MiB Mem :  8000 total,  2000 free,  5000 used, 1000 buff/cache
 
 Check:
 
-* CPU > 90% → CPU bottleneck
+* CPU > 90% → CPU bottleneck. A CPU bottleneck happens when the CPU is the slowest component in the system, and it limits overall performance even if other components (RAM/GPU/disk) are faster
 * load average > CPU cores → overload
 
 ### 🔥 Memory issue?
