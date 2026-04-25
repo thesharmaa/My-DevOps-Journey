@@ -51,7 +51,7 @@ MiB Mem :  8000 total,  2000 free,  5000 used, 1000 buff/cache
 | Field        | Meaning                     |
 | ------------ | --------------------------- |
 | uptime       | How long system is running  |
-| load average | CPU demand (1, 5, 15 min)   |
+| load average | CPU demand (1, 5, 15 min), average number of processes that are either running or waiting  |
 | tasks        | total processes             |
 | CPU %        | how CPU is being used       |
 | memory       | RAM usage (used/free/cache) |
