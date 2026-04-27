@@ -128,4 +128,3 @@ total used free buff/cache available
 4. free → memory issue?
 5. iostat → disk issue?
 
-Refine for github so that i can commit it
