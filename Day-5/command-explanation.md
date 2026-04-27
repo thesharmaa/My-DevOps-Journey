@@ -1,9 +1,4 @@
-1. Deep explanation of each command (what + how to read output)
-2. Real troubleshooting logic (how to connect them)
-3. 20+ real interview scenarios
-4. Final cheat sheet (what to remember under pressure)
 
-⸻
 
 🔵 1. top – Live system view (CPU + Memory + Processes)
 
