@@ -20,7 +20,7 @@ The /bin directory contains essential command binaries like ls, cp, mv, and cat.
 
 The /sbin directory contains system administration commands such as reboot and fdisk. For example, sudo reboot uses binaries from this directory. It is used for system control tasks, and its importance lies in managing and maintaining the system, especially by administrators.
 
-📁 /etc
+📁 /etc Settings app ⚙️
 
 The /etc directory stores configuration files for the system and applications. For example, /etc/hosts manages hostname mappings, and /etc/nginx/nginx.conf configures a web server. It is used to control how the system and services behave, and it is important because even a small change here can affect the entire system.
 
@@ -28,7 +28,7 @@ The /etc directory stores configuration files for the system and applications. F
 
 The /var directory contains variable data that keeps changing, such as logs, cache, and web files. For example, /var/log/syslog stores system logs and /var/www/html stores website files. It is used to track system activity and runtime data, and it is important because it helps in debugging and monitoring.
 
-📁 /usr
+📁 /usr Installed apps 📱
 
 The /usr directory stores user programs, applications, and libraries. For example, /usr/bin/python3 or /usr/bin/git. It is used to hold most installed software, and it is important because it is the main place from where applications are run.
 
