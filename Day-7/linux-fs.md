@@ -1,6 +1,7 @@
 🐧 Linux File System – Definitions, Examples & Use
-🌳 / (Root)
 
+
+🌳 / (Root)
 The root directory / is the top-most directory in Linux, and all other files and folders exist inside it. For example, directories like /home, /etc, and /var are all inside /. It is used as the starting point of the entire system, and its significance is very high because if the root is corrupted, the whole operating system can fail.
 
 📁 /home
