@@ -17,7 +17,7 @@ else chmod 700 backup.sh // rwx------
 ./backup.sh
 
 
-# ls -l and ls -ls
+# ls -l and ls -ld
 Without -d
 ls -l /home/ubuntu
 👉 Shows permissions of files inside the directory
