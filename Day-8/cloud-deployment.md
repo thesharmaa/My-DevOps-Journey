@@ -201,6 +201,3 @@ chmod 755 /var/www/html
 ✔️ correct ownership
 ✔️ port 80/443 open
 ✔️ logs checked
-```
-
-Just tell me 👍
