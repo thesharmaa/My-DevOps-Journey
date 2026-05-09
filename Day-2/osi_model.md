@@ -28,7 +28,7 @@
 
 # 7. Application Layer
 
-“The Application Layer directly interacts with end users. Applications like web browsers, email services, and file transfer tools use this layer for communication. This layer works closest to the user and mainly operates inside the system at the software level. Protocols such as HTTP, HTTPS, FTP, SMTP, and DNS work at this layer. ”
+“The Application Layer directly interacts with end users. This layer works closest to the user and mainly operates inside the system at the software level. Applications like web browsers, email services, and file transfer tools use this layer for communication. Protocols such as HTTP, HTTPS, FTP, SMTP, and DNS work at this layer. ”
 
 # Conclusion
 
