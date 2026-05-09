@@ -12,15 +12,15 @@
 
 # 3. Network Layer
 
-“The Network Layer is responsible for logical addressing and routing of data between different networks. It determines the best path for data transmission using IP addresses. Protocols like IP, ICMP, and OSPF work at this layer, while routers and Layer 3 switches are the common devices associated with it. The data unit at this layer is called a packet.”
+“The Network Layer is responsible for logical addressing and routing of data between different networks. It determines the best path for data transmission using IP addresses. Protocols like IP, ICMP, and OSPF work at this layer. It adds source and destination IP addresses to packets and forwards them to the Data Link Layer.”
 
 # 4. Transport Layer
 
-“The Transport Layer ensures reliable end-to-end communication between systems. It performs segmentation, error checking, flow control, and reassembly of data. TCP and UDP are the main protocols used here. TCP provides reliable communication, while UDP is faster but less reliable. Firewalls and load balancers commonly operate at this layer. The data unit here is called a segment.”
+“The Transport Layer ensures reliable end-to-end communication and data transfer between systems. It performs segmentation, adds port number and sequence number. TCP and UDP are the main protocols used here. TCP provides reliable communication, while UDP is faster but less reliable. Firewalls and load balancers commonly operate at this layer. The data unit here is called a segment.”
 
 # 5. Session Layer
 
-“The Session Layer is responsible for establishing, maintaining, and terminating communication sessions between devices or applications. It manages synchronization and controls dialogues between systems. Technologies such as RPC and NetBIOS are examples related to this layer. This layer mainly works at the software and system level.”
+“The Session Layer is responsible for establishing, maintaining, and terminating communication sessions between devices or applications. It also manages synchronization between systems. Technologies such as RPC and NetBIOS are examples related to this layer. This layer mainly works at the software and system level.”
 
 # 6. Presentation Layer
 
@@ -28,7 +28,7 @@
 
 # 7. Application Layer
 
-“The Application Layer directly interacts with end users. This layer works closest to the user and mainly operates inside the system at the software level. Applications like web browsers, email services, and file transfer tools use this layer for communication. Protocols such as HTTP, HTTPS, FTP, SMTP, and DNS work at this layer. ”
+“The Application Layer directly interacts with end users and it mainly operates inside the system at the software level. Applications like web browsers, email services, and file transfer tools use this layer for communication. Protocols such as HTTP, HTTPS, FTP, SMTP, and DNS work at this layer.”
 
 # Conclusion
 
