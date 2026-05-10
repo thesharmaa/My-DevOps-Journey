@@ -32,26 +32,28 @@ ls -l
 ls -l devops-file.txt
 ```
 
-* Created users if required
-* Changed file owner from one user to another
-* Practiced ownership modification using:
+* Created users:
+
+  * `tokyo`
+  * `berlin`
+
+* Changed file owner to `tokyo` using:
 
 ```bash id="v1b2n3"
 sudo chown tokyo devops-file.txt
 ```
 
-and
+* Verified ownership changes successfully using `ls -l`
 
-```bash id="m4n5b6"
-sudo chown berlin devops-file.txt
-```
+* Explored file access behavior between users and permissions
 
-* Verified ownership changes successfully
+* Learned how ownership affects file accessibility
 
 * Learned:
 
   * `chown` changes file owner
   * Ownership can be transferred between users
+  * File access depends on owner, group, and others permissions
 
 ---
 
@@ -83,6 +85,7 @@ sudo chgrp heist-team team-notes.txt
 # Task 4: Combined Owner & Group Change (15 minutes)
 
 * Created file `project-config.yaml`
+* Created user `professor`
 * Changed both owner and group in one command:
 
 ```bash id="p4o5i6"
@@ -95,6 +98,8 @@ sudo chown professor:heist-team project-config.yaml
 ```bash id="u7y8t9"
 sudo chown berlin:heist-team app-logs/
 ```
+
+* Verified ownership changes using `ls -ld`
 
 * Learned:
 
@@ -132,15 +137,22 @@ sudo chown -R professor:planners heist-project/
 ls -lR heist-project/
 ```
 
+* Verified directory ownership using:
+
+```bash id="t7y8u9"
+ls -ld heist-project/
+```
+
 * Learned:
 
   * `-R` applies ownership changes recursively
   * Parent folder and all contents inherit updated ownership
+  * Difference between:
 
-* Understood difference between:
+    * `folder`
+    * `folder/*`
 
-  * `folder`
-  * `folder/*`
+* Explored Linux directory permissions and traversal behavior
 
 ---
 
@@ -171,18 +183,18 @@ touch bank-heist/blueprints.pdf
 touch bank-heist/escape-plan.txt
 ```
 
-* Assigned different ownerships and groups:
+* Assigned ownerships and groups:
 
 ```bash id="v4b5n6"
 sudo chown tokyo:vault-team bank-heist/access-codes.txt
 ```
 
 ```bash id="m7n8b9"
-sudo chown berlin:tech-team bank-heist/blueprints.pdf
+sudo chown nairobi:vault-team bank-heist/blueprints.pdf
 ```
 
 ```bash id="q1w2e4"
-sudo chown nairobi:vault-team bank-heist/escape-plan.txt
+sudo chown tokyo:vault-team bank-heist/escape-plan.txt
 ```
 
 * Verified ownerships using:
@@ -196,3 +208,4 @@ ls -l bank-heist/
   * Real-world file access management
   * Multi-user and multi-group ownership handling
   * Linux permission and ownership administration in practical scenarios
+  * User/group ownership impacts file accessibility and security
