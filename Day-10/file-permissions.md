@@ -25,4 +25,15 @@ touch is used to create an empty file or update timestamps, whereas vim is a com
 - The `ubuntu` user and group have read and write access to `devops.txt`, `notes.txt`, and `scripts.sh`, while other users only have read permission for these files.
 
 
+# Task 4: Modify Permissions
+- Make script.sh executable → run it with ./script.sh
+- Set devops.txt to read-only (remove write for all)
+- Set notes.txt to 640 (owner: rw, group: r, others: none)
+- Create directory project/ with permissions 755
+<img width="461" height="224" alt="image" src="https://github.com/user-attachments/assets/9d9f09eb-bbe2-46e9-9198-d4b542d23fe9" />
 
+# Task 5: Test Permissions 
+Try writing to a read-only file - what happens?
+Try executing a file without execute permission
+Document the error messages
+<img width="414" height="155" alt="image" src="https://github.com/user-attachments/assets/7a641451-cd50-4dde-91e6-31c616200d49" />
