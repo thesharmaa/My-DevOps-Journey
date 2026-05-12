@@ -18,6 +18,6 @@ This is the layer where communication sessions between systems are established, 
 `Presentation Layer –` 
 This is the layer where data formatting, encryption, and compression are handled for the application.
 ----------
-`Application Layer –`` 
+`Application Layer –` 
 This is the layer where end-user applications like web browsers, email clients, and APIs operate.
 ----------
