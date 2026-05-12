@@ -16,7 +16,7 @@ This is the layer where end-to-end delivery is provided using TCP (reliable comm
 This is the layer where communication sessions between systems are established, managed, and terminated.
 ----------
 `Presentation Layer –` 
-This is the layer where data formatting, encryption, and compression are handled for the application.
+This is the layer where data formatting, encryption, decryption, and compression are handled for the application.
 ----------
 `Application Layer –` 
 This is the layer where end-user applications like web browsers, email clients, and APIs operate.
