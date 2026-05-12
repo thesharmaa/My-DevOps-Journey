@@ -7,7 +7,7 @@ This is the layer where raw bits are transmitted over physical mediums like cabl
 This is the layer where data is transferred between devices on the same network using MAC addresses and switches.
 ----------
 `Network Layer – `
-This is the layer which handles logical addressing and path determination
+This is the layer which handles logical addressing and best path determination for datas.
 ----------
 `Transport Layer – `
 This is the layer where end-to-end delivery is provided using TCP (reliable communication) or UDP (fast communication without guarantee).
