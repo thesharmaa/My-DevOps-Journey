@@ -30,3 +30,10 @@ This is the layer where end-user applications like web browsers, email clients, 
 3. **Transport Layer** – This is the layer where end-to-end delivery is provided using TCP (reliable communication) or UDP (fast communication without guarantee).
 
 4. **Application Layer** – This is the layer where end-user applications like web browsers, email clients, and APIs operate, data formatting happens and sessions are managed.
+
+# Where IP, TCP/UDP, HTTP/HTTPS, DNS sit in the stack
+1. **Application Layer** – HTTP, HTTPS, DNS, FTP, SMTP
+2. **Transport Layer** – TCP, UDP
+3. **Internet Layer** – IP (IPv4/IPv6), ICMP
+4. **Network Access Layer** – Ethernet, Wi-Fi, MAC Address, Switches, Cables, Wireless Signals
+
