@@ -19,16 +19,17 @@ Example output:
 ```bash
 Connection to localhost 22 port [tcp/ssh] succeeded!
 ```
+
 ```bash
 Connection to localhost (127.0.0.1) 22 port [tcp/ssh] succeeded!
 ```
 
 Meaning:
 
-- localhost (127.0.0.1) → Your own machine
-- 22 → SSH port
-- [tcp/ssh] → TCP service running for SSH
-- succeeded! → Connection to port 22 was successful
+- `localhost (127.0.0.1)` → Your own machine
+- `22` → SSH port
+- `[tcp/ssh]` → TCP service running for SSH
+- `succeeded!` → Connection to port 22 was successful
 
 This confirms:
 
@@ -38,7 +39,9 @@ This confirms:
 
 Write one line: is it reachable? If not, what’s the next check? (e.g., service status, firewall).
 
-SSH on port 22 is reachable. If not reachable, next checks would be service status (systemctl status ssh) and firewall rules.
+SSH on port 22 is reachable. If not reachable, next checks would be service status (`systemctl status ssh`) and firewall rules.
+
+---
 
 ---
 
