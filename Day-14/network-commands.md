@@ -117,25 +117,26 @@ High availability
 Faster routing
 
 status: NOERROR
+
 → DNS query was successful.
 TTL (Time To Live) in DNS tells how long a DNS response can be cached before asking the DNS server again.
 
-Example:
+Suppose your system asks DNS:
+What is the IP of google.com?
+DNS replies:
+google.com = 172.253.139.139
+TTL = 256 seconds
+Now your computer stores (caches) this answer for 256 seconds.
+So if you open Google again within 256 seconds:
+Your system uses the saved IP
+It does NOT ask DNS server again
+This makes browsing faster.
+After 256 seconds:
+Cache expires
+Your system asks DNS again for a fresh IP
+Because sometimes websites change their IP addresses.
 
-google.com. 256 IN A 172.253.139.139
-256 = TTL in seconds
-Means this DNS record can be cached for 256 seconds (~4 minutes)
-
-After TTL expires:
-
-System queries DNS server again for a fresh IP.
-
-Purpose of TTL:
-
-Reduces DNS traffic
-Speeds up lookups using cache
-Allows DNS changes to propagate after cache expires
-HTTP check: curl -I <http/https-url> — note the HTTP status code.
-Connections snapshot: netstat -an | head — count ESTABLISHED vs LISTEN (rough).
-
+6. **HTTP check: curl -I <http/https-url> — note the HTTP status code.**
+ubuntu@ip-172-31-47-21:~$ curl -I google.com
+HTTP/1.1 301 Moved Permanently
 
