@@ -1,11 +1,11 @@
 # Hands-on Checklist (run these; add 1–2 line observations)
 
-**Identity: hostname -I (or ip addr show) — note your IP.**
+1. **Identity: hostname -I (or ip addr show) — note your IP.**
 ubuntu@ip-172-31-47-21:~$ hostname -I
 172.31.47.21
 
 
-**Reachability: ping <target> — mention latency and packet loss.**
+2, **Reachability: ping <target> — mention latency and packet loss.**
 ubuntu@ip-172-31-47-21:~$ ping google.com
 PING google.com (142.251.179.113) 56(84) bytes of data.
 64 bytes from pd-in-f113.1e100.net (142.251.179.113): icmp_seq=1 ttl=106 time=2.17 ms
@@ -26,7 +26,7 @@ icmp_seq=2
 icmp_seq=3
 So there is no packet loss in the shown packets.
 
-**Path: traceroute <target> (or tracepath) — note any long hops/timeouts.**
+3. **Path: traceroute <target> (or tracepath) — note any long hops/timeouts.**
 ubuntu@ip-172-31-47-21:~$ traceroute google.com
 traceroute to google.com (192.178.155.113), 30 hops max, 60 byte packets
  1  240.64.220.131 (240.64.220.131)  1.323 ms 240.64.220.128 (240.64.220.128)  1.125 ms 240.64.220.129 (240.64.220.129)  1.107 ms
@@ -58,8 +58,83 @@ One packet can work, but sending multiple probe packets helps because networks a
 If only one packet was sent, you might miss these network fluctuations. One packet delayed and one lost
 yuiadrs-in-f113.1e100.net - Google server reached
 
-Ports: ss -tulpn (or netstat -tulpn) — list one listening service and its port.
-Name resolution: dig <domain> or nslookup <domain> — record the resolved IP.
+4. **Ports: ss -tulpn (or netstat -tulpn) — list one listening service and its port.**
+ubuntu@ip-172-31-47-21:~$ ss -tulpn
+Netid State  Recv-Q Send-Q       Local Address:Port   Peer Address:Port Process
+udp   UNCONN 0      0               127.0.0.54:53          0.0.0.0:*
+udp   UNCONN 0      0            127.0.0.53%lo:53          0.0.0.0:*
+udp   UNCONN 0      0        172.31.47.21%ens5:68          0.0.0.0:*
+udp   UNCONN 0      0                127.0.0.1:323         0.0.0.0:*
+udp   UNCONN 0      0                    [::1]:323            [::]:*
+tcp   LISTEN 0      4096               0.0.0.0:22          0.0.0.0:*
+tcp   LISTEN 0      4096            127.0.0.54:53          0.0.0.0:*
+tcp   LISTEN 0      4096         127.0.0.53%lo:53          0.0.0.0:*
+tcp   LISTEN 0      4096                  [::]:22             [::]:*
+
+tcp LISTEN 0 4096 0.0.0.0:22
+→ SSH server listening on port 22 from all IPv4 addresses.
+
+tcp LISTEN 0 4096 [::]:22
+→ SSH also listening on IPv6.
+
+127.0.0.53:53
+→ Local DNS resolver running on port 53.
+
+ss -tulpn shows listening TCP/UDP ports and the services using them.
+
+
+
+5. **Name resolution: dig <domain> or nslookup <domain> — record the resolved IP.**
+ubuntu@ip-172-31-47-21:~$ dig google.com
+
+; <<>> DiG 9.20.18-1ubuntu2-Ubuntu <<>> google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33403
+;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.                    IN      A
+
+;; ANSWER SECTION:
+google.com.             256     IN      A       172.253.139.139
+google.com.             256     IN      A       172.253.139.113
+google.com.             256     IN      A       172.253.139.102
+google.com.             256     IN      A       172.253.139.138
+google.com.             256     IN      A       172.253.139.101
+google.com.             256     IN      A       172.253.139.100
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Tue May 12 15:12:41 UTC 2026
+;; MSG SIZE  rcvd: 135
+
+Multiple IPs are returned for:
+Load balancing
+High availability
+Faster routing
+
+status: NOERROR
+→ DNS query was successful.
+TTL (Time To Live) in DNS tells how long a DNS response can be cached before asking the DNS server again.
+
+Example:
+
+google.com. 256 IN A 172.253.139.139
+256 = TTL in seconds
+Means this DNS record can be cached for 256 seconds (~4 minutes)
+
+After TTL expires:
+
+System queries DNS server again for a fresh IP.
+
+Purpose of TTL:
+
+Reduces DNS traffic
+Speeds up lookups using cache
+Allows DNS changes to propagate after cache expires
 HTTP check: curl -I <http/https-url> — note the HTTP status code.
 Connections snapshot: netstat -an | head — count ESTABLISHED vs LISTEN (rough).
 
