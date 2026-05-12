@@ -43,24 +43,24 @@ SSH on port 22 is reachable. If not reachable, next checks would be service stat
 
 ---
 
----
-
 # Reflection
 
 ## Which command gives you the fastest signal when something is broken?
 
-ping gives the fastest signal to quickly check basic network connectivity, latency, and packet loss.
+`ping` gives the fastest signal to quickly check basic network connectivity, latency, and packet loss.
 
 ---
 
 ## What layer (OSI/TCP-IP) would you inspect next if DNS fails? If HTTP 500 shows up?
 
 If DNS fails:
+
 - Application Layer (DNS)
 - Then Transport Layer (UDP/TCP port 53)
 - Then Internet Layer/IP connectivity
 
 If HTTP 500 shows up:
+
 - Application Layer
 - Check web server logs, backend application, database connectivity, and server status
 
@@ -68,16 +68,20 @@ If HTTP 500 shows up:
 
 ## Two follow-up checks you’d run in a real incident.
 
-1. Check service status and logs:
+Check service status and logs:
+
 ```bash
 systemctl status <service>
 journalctl -xe
 ```
 
-2. Check connectivity and open ports:
+Check connectivity and open ports:
+
 ```bash
 ping
 ss -tulpn
 curl -I
 traceroute
 ```
+
+---
