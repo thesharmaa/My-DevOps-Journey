@@ -70,6 +70,31 @@ Features:
 * Checks service status using `systemctl`
 * Displays whether service is active or skipped
 
+`#!/bin/bash
+
+service="nginx"
+
+read -p "Do you want to check the status? (y/n) " yes_or_no
+
+if [ "$yes_or_no" = "y" ]
+then
+	stats=$(sudo systemctl status $service | grep -E "active|inactive")
+	if [ -z "$stats" ]
+	then
+		echo "$stats"
+		echo "NGINX not installed and installing NGINX....."
+		sudo apt-get update > /dev/null
+		sudo apt-get install nginx -y > /dev/null
+		echo "NGINX installed"
+		sudo systemctl start nginx > /dev/null
+		echo $(sudo systemctl status nginx)
+	else
+		echo $(sudo systemctl status nginx | grep -E "active|inactive")
+	fi
+else
+	echo "Skipped"
+fi`
+
 ---
 
 🛠 Skills Practiced
