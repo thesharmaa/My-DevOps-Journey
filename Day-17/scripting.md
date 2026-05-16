@@ -39,7 +39,7 @@ echo "Done!"
 ```
 
 ## Task 3: Command-Line Arguments
-1. Create greet.sh that:
+Create greet.sh that:
 Accepts a name as $1
 Prints Hello, <name>!
 If no argument is passed, prints "Usage: ./greet.sh "
@@ -54,7 +54,7 @@ echo "Hello, $name"
 fi
 ```
 
-2. Create args_demo.sh that:
+Create args_demo.sh that:
 Prints total number of arguments ($#)
 Prints all arguments ($@)
 Prints the script name ($0)
@@ -64,3 +64,4 @@ Prints the script name ($0)
 echo "Total number of args passed: $#"
 echo "Args passed: $@"
 echo "Script name is : $0"
+```
