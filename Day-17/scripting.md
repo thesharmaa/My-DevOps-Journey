@@ -1,6 +1,6 @@
-## Challenge Tasks
+# Challenge Tasks
 
-# Task 1: For Loop
+## Task 1: For Loop
 Create for_loop.sh that:
 Loops through a list of 5 fruits and prints each one
 ```bash
@@ -20,4 +20,20 @@ for (( num=1 : num <= 10 : num++ ))
 do 
   echo $num
 done
+```
+
+## Task 2: While Loop
+Create countdown.sh that:
+Takes a number from the user
+Counts down to 0 using a while loop
+Prints "Done!" at the end
+
+```bash
+num=5
+while (( num >= 0 ))
+do
+ echo "$num"
+ (( num-- ))
+done
+echo "Done!"
 ```
