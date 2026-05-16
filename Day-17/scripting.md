@@ -55,9 +55,9 @@ fi
 ```
 
 Create args_demo.sh that:
-Prints total number of arguments ($#)
-Prints all arguments ($@)
-Prints the script name ($0)
+Prints total number of arguments $#
+Prints all arguments $@
+Prints the script name $0
 
 ```bash
 #!/bin/bash
