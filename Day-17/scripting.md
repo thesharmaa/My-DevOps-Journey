@@ -52,8 +52,15 @@ echo "Usage:./greet.sh"
 else
 echo "Hello, $name"
 fi
+```
 
 2. Create args_demo.sh that:
 Prints total number of arguments ($#)
 Prints all arguments ($@)
 Prints the script name ($0)
+
+```bash
+#!/bin/bash
+echo "Total number of args passed: $#"
+echo "Args passed: $@"
+echo "Script name is : $0"
