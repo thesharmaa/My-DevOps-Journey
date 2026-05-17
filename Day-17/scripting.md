@@ -65,3 +65,30 @@ echo "Total number of args passed: $#"
 echo "Args passed: $@"
 echo "Script name is : $0"
 ```
+
+
+## Task 4: Install Packages via Script
+Create install_packages.sh that:
+Defines a list of packages: nginx, curl, wget
+Loops through the list
+Checks if each package is installed (use dpkg -s or rpm -q)
+Installs it if missing, skips if already present
+Prints status for each package
+
+```bash
+#!/bin/bash
+packages=("nginx" "wget" "curl")
+for package in "${packages[@]}" 
+do 
+if dpkg -s "$package" >/dev/null 2>&1 
+then 
+echo ""$package" is already installed" 
+else
+echo ""$package" is not installed"
+echo "Installing the "$package""
+sudo apt-get update -y >/dev/null
+sudo apt-get install "$package" -y >/dev/null
+echo ""$package" is installed"
+fi
+```
+done
