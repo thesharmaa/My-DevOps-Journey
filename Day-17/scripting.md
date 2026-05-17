@@ -90,5 +90,6 @@ sudo apt-get update -y >/dev/null
 sudo apt-get install "$package" -y >/dev/null
 echo ""$package" is installed"
 fi
-```
 done
+```
+
