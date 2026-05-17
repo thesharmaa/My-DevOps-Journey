@@ -93,3 +93,45 @@ fi
 done
 ```
 
+## Task 5: Error Handling
+Create safe_script.sh that:
+Uses set -e at the top (exit on error)
+Tries to create a directory /tmp/devops-test
+Tries to navigate into it
+Creates a file inside
+Uses || operator to print an error if any step fails
+Example:
+mkdir /tmp/devops-test || echo "Directory already exists"
+```bash
+#!/bin/bash
+mkdir -p /tmp/devops-test/ || echo "Directory already exist"
+cd /tmp/devops-test/ || echo "Unable to navigate to directory"
+touch test.txt || echo "Unable to create the text file"
+```
+
+## 2. Modify your install_packages.sh to check if the script is being run as root — exit with a message if not.
+```bash
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]
+then
+    echo "Please run with sudo"
+    exit 1
+fi
+packages=("nginx" "wget" "curl")
+for package in "${packages[@]}" 
+do 
+if dpkg -s "$package" >/dev/null 2>&1 
+then 
+echo ""$package" is already installed" 
+else
+echo ""$package" is not installed"
+echo "Installing the "$package""
+sudo apt-get update -y >/dev/null
+sudo apt-get install "$package" -y >/dev/null
+echo ""$package" is installed"
+fi
+done
+
+```
+
