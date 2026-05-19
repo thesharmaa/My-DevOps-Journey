@@ -75,15 +75,91 @@ set -o pipefail: makes bash detect failure inside pipelines instead of checking 
 
 
 
+## Task 4: Local Variables
+Create local_demo.sh with:
+A function that uses local keyword for variables
+Show that local variables don't leak outside the function
+Compare with a function that uses regular variables
 
+```bash
+#!/bin/bash
+set -euo pipefail
 
+name="Aman"
+my_name() {
+  name=$1
+  echo "My name is, $name"
+}
 
+my_name Rahul
+echo $name // Rahul
+So this changes the local variable name to "Rahul".
 
+name="Aman"
+my_name() {
+  local name=$1
+  echo "My name is, $name"
+}
 
+my_name Rahul
+echo $name // Aman
+Correct one
+```
 
+## Task 5: Build a Script — System Info Reporter
+Create system_info.sh that uses functions for everything:
 
+A function to print hostname and OS info
+A function to print uptime
+A function to print disk usage (top 5 by size)
+A function to print memory usage
+A function to print top 5 CPU-consuming processes
+A main function that calls all of the above with section headers
+Use set -euo pipefail at the top
+```bash
+#!/bin/bash
 
+set -euo pipefail
 
+hostname_&_OS_info() {
+    echo ".....Your IP Address....."
+    hostname -I
+    echo ".....Your Hostname....."
+    hostname
+    echo ".....Your OS info....."
+    cat /etc/os-release
+}
+
+load_average(){
+    echo "========Load average========"
+    uptime
+}
+
+disk_usage(){
+    echo "========Disk Usage========"
+    df -h | sort -hr -k2
+}
+
+memory_usage(){
+    echo "========Memory Usage========"
+    free -m
+}
+
+top_5_CPU_consuming(){
+    echo "========CPU Consuming Process========"
+    ps -eo pid,ppid,cmd,%cpu --sort=-%cpu |head -6
+}
+
+hostname_&_OS_info
+load_average
+disk_usage
+memory_usage
+top_5_CPU_consuming
+memory_usage
+
+-- INSERT --
+
+```
 
 
 
