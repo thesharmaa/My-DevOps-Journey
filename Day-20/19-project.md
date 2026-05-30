@@ -64,3 +64,66 @@ creating_backup_on_days
 
 
 ```
+
+
+
+# Task 2: Server Backup Script
+## Create backup.sh that:
+
+## Takes a source directory and backup destination as arguments
+## Creates a timestamped .tar.gz archive (e.g., backup-2026-02-08.tar.gz)
+## Verifies the archive was created successfully
+## Prints archive name and size
+## Deletes backups older than 14 days from the destination
+## Handles errors — exit if source doesn't exist
+
+```bash
+#!/bin/bash
+
+
+source=$1
+destination=$2
+if [ ! "${source}" ]
+then
+echo "Error: Source directory does not exist"
+exit 1
+fi
+
+
+
+timestamp=$(date +'%Y-%m-%d-%H-%M-%S')
+
+#archiveing and compressing the file
+backup_file="${destination}/backup-${timestamp}.tar.gz"
+tar -cvzf "${backup_file}" "${source}" >/dev/null 2>&1
+
+if [ -f "${backup_file}" ]
+then
+        echo "Success: Backup file created successfully"
+        echo "Archive name: "$(basename $backup_file)""
+        echo "Sixes: $(du -h "${backup_file}" | awk '{print $1}')"
+else
+        echo "Backup failed"
+        exit 1
+fi
+
+find "${destination}" -name "*.tar.gz" -mtime +14 -delete
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
