@@ -47,12 +47,12 @@ function creating_backup_on_days {
         #deleting the log files from sources direwctory which are 7 days older
         sudo find "${source_dir}" -name "*.log" -mtime +7 -delete
 
-        #deleting the log files already zipped which are 30 days older
-        sudo find "${destination_dir}" -name "*.gzip" -mtime +30 -delete
-
         #number of zipped files older than 30 days needs to be removed
         countzip=$(sudo find "${destination_dir}" -name "*.gzip" -mtime +30 | wc -l)
         echo "Files to be deleted greater thaan 30 days: ${countzip}"
+
+        #deleting the log files already zipped which are 30 days older
+        sudo find "${destination_dir}" -name "*.gzip" -mtime +30 -delete  
 
 }
 
