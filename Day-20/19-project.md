@@ -115,7 +115,7 @@ find "${destination}" -name "*.tar.gz" -mtime +14 -delete
 # Task 4: Combine — Scheduled Maintenance Script
 ## Create maintenance.sh that:
 
-## alls your log rotation function
+## Calls your log rotation function
 ## Calls your backup function
 ## Logs all output to /var/log/maintenance.log with timestamps
 ## Write the cron entry to run it daily at 1 AM
@@ -144,7 +144,10 @@ echo "========= $(date +'%Y-%m-$d-%H-%M-%S') Maintenance completed ========"
 echo " ">> "${log_file}"
 
 ```
-
+## In crontab -e
+```bash
+0 1 * * * bash /home/ubuntu/maintenance.sh
+```
 
 
 
