@@ -63,7 +63,51 @@ done
 4
 5
 ```
+## Looping Through an Array
 
+### Example
+
+```bash
+fruits=("Apple" "Banana" "Mango")
+
+for fruit in "${fruits[@]}"
+do
+    echo "$fruit"
+done
+```
+
+### Output
+
+```text
+Apple
+Banana
+Mango
+```
+
+### Explanation
+
+- `fruits=("Apple" "Banana" "Mango")` creates an array.
+- `${fruits[@]}` returns all elements of the array.
+- Quotes (`"${fruits[@]}"`) preserve elements that contain spaces.
+
+### Example with Spaces
+
+```bash
+fruits=("Green Apple" "Banana" "Mango")
+
+for fruit in "${fruits[@]}"
+do
+    echo "$fruit"
+done
+```
+
+### Output
+
+```text
+Green Apple
+Banana
+Mango
+```
 ---
 
 ## 3. `while` Loop
