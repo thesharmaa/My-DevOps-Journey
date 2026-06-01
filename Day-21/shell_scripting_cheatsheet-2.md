@@ -97,37 +97,100 @@ Used to check file and directory properties.
 
 ### Examples
 
-### Check if file exists
+## File Test Operators
+
+### `-f` → File exists and is a regular file
 
 ```bash
-if [ -f "test.txt" ]; then
-    echo "File exists"
+if [ -f "notes.txt" ]; then
+    echo "notes.txt is a file"
 fi
 ```
 
-### Check if directory exists
+**Scenario:** `notes.txt` exists as a file.
+
+---
+
+### `-d` → Directory exists
 
 ```bash
-if [ -d "/home/user" ]; then
+if [ -d "/home/aman/Documents" ]; then
     echo "Directory exists"
 fi
 ```
 
-### Check if file is readable
+**Scenario:** Checking whether a folder exists.
+
+---
+
+### `-e` → File or directory exists
 
 ```bash
-if [ -r "test.txt" ]; then
-    echo "Readable"
+if [ -e "notes.txt" ]; then
+    echo "Path exists"
 fi
 ```
 
-### Check if file is not empty
+```bash
+if [ -e "/home/aman/Documents" ]; then
+    echo "Path exists"
+fi
+```
+
+**Scenario:** You only care that something exists, not whether it's a file or directory.
+
+---
+
+### `-r` → Read permission
 
 ```bash
-if [ -s "test.txt" ]; then
+if [ -r "notes.txt" ]; then
+    echo "File is readable"
+fi
+```
+
+**Scenario:** Current user can read the file.
+
+---
+
+### `-w` → Write permission
+
+```bash
+if [ -w "notes.txt" ]; then
+    echo "File is writable"
+fi
+```
+
+**Scenario:** Current user can modify the file.
+
+---
+
+### `-x` → Execute permission
+
+```bash
+if [ -x "deploy.sh" ]; then
+    echo "Script is executable"
+fi
+```
+
+**Scenario:** `deploy.sh` has execute permission (`chmod +x deploy.sh`).
+
+---
+
+### `-s` → File exists and is not empty
+
+```bash
+if [ -s "log.txt" ]; then
     echo "File contains data"
 fi
 ```
+
+**Scenario:**
+
+- `log.txt` exists ✔️
+- Size > 0 bytes ✔️
+
+If the file is empty, the condition is false.
 
 ---
 
