@@ -36,7 +36,7 @@ During this journey I will learn and practice:
 
 - [X] Day 01 – DevOps Learning Plan
 - [X] Networking Basics
-- [ ] Linux Fundamentals
+- [X] Linux & Shell Scripts
 - [ ] Git & GitHub
 - [ ] Docker
 - [ ] Kubernetes
