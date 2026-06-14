@@ -1,4 +1,4 @@
-
+```bash
 <<commands
 Here are the list of git commands
 commands
@@ -56,3 +56,4 @@ Remote: A --- B --- C
 Result:
 
 A --- B --- C --- D'
+```
