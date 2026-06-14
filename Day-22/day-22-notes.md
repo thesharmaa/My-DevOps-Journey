@@ -132,25 +132,139 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
         new file:   git-commands.md
 
-ubuntu@ip-172-31-38-86:~/devops-git-practice$ git commit -m
-error: switch `m' requires a value
-ubuntu@ip-172-31-38-86:~/devops-git-practice$
 ubuntu@ip-172-31-38-86:~/devops-git-practice$ git commit -m "Adding git commands documentation"
+
 [master (root-commit) 057bd83] Adding git commands documentation
  1 file changed, 52 insertions(+)
  create mode 100644 git-commands.md
+
 ubuntu@ip-172-31-38-86:~/devops-git-practice$ git log --oneline
 057bd83 (HEAD -> master) Adding git commands documentation
 
 ```
 
+## Task 5: Make More Changes and Build History
+## Edit git-commands.md — add more commands as you discover them
+## Check what changed since your last commit
+## Stage and commit again with a different, descriptive message
+## Repeat this process at least 3 times so you have multiple commits in your history
+## View the full history in a compact format
+
+```bash
+ubuntu@ip-172-31-38-86:~/devops-git-practice$ git log --oneline
+432628b (HEAD -> master) Adding more commands
+7ce6101 Updating git-commands.md with git restore command
+3a1b05a Updating git-commands.md with git commands
+057bd83 Adding git commands documentation
 
 
+```
 
 
+## Task 6: Understand the Git Workflow
+## Answer these questions in your own words (add them to a day-22-notes.md file):
 
+## What is the difference between git add and git commit?
+## What does the staging area do? Why doesn't Git just commit directly?
+## What information does git log show you?
+## What is the .git/ folder and what happens if you delete it?
+## What is the difference between a working directory, staging area, and repository?
 
+```bash
+1. What is the difference between git add and git commit?
 
+Answer:
+git add moves changes to the staging area, while git commit saves those staged changes in the local repository.
+
+Example:
+
+git add app.py
+git commit -m "Added login feature"
+
+Why?
+Because you may modify many files but only want to commit selected changes.
+
+2. What does the staging area do? Why doesn't Git just commit directly?
+
+Answer:
+The staging area lets you review and choose which changes will be included in the next commit.
+
+Example:
+
+You changed:
+
+app.py
+README.md
+config.txt
+
+But only want to commit app.py:
+
+git add app.py
+git commit -m "Added login logic"
+
+Why?
+Without a staging area, Git would commit all modified files together, reducing control over commits.
+
+3. What information does git log show you?
+
+Answer:
+git log shows the history of commits including commit ID, author, date, and commit message.
+
+Example:
+
+git log --oneline
+
+Output:
+
+a1b2c3d Added login feature
+f4g5h6i Initial commit
+
+Why?
+To track what changes were made, who made them, and when.
+
+4. What is the .git/ folder and what happens if you delete it?
+
+Answer:
+.git/ is Git's database that stores commits, branches, configuration, and history.
+
+Example:
+
+ls .git
+
+Output:
+
+HEAD  config  objects  refs
+
+Why?
+Git needs this folder to track versions. If you delete .git/, the project files remain, but Git history, branches, and tracking are lost.
+
+5. What is the difference between a Working Directory, Staging Area, and Repository?
+
+Answer:
+
+Working Directory → Staging Area → Repository
+       git add          git commit
+
+Example:
+
+echo "Hello" >> app.py
+
+File is in the Working Directory.
+
+git add app.py
+
+File moves to the Staging Area.
+
+git commit -m "Updated app"
+
+Changes are saved in the Repository.
+
+Why?
+
+Working Directory → Where you make changes.
+Staging Area → Where you prepare selected changes.
+Repository → Where Git permanently stores commit history.
+```
 
 
 
