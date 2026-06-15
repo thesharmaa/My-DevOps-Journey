@@ -70,3 +70,58 @@ fc9234c (HEAD -> feature-1) feature ready in feature-1 branch
 ef937f0 (origin/master, master, feature-2) files
 
 ```
+
+
+## What is the difference between origin and upstream?
+
+```bash
+origin is usually your own remote repository, while upstream is the original repository you forked from.
+```
+
+## What is the difference between git fetch and git pull?
+```bash
+git fetch only downloads changes, while git pull downloads and merges them into the current branch.
+```
+
+## What is the difference between clone and fork?
+```bash
+Clone = Copying a repository from a remote server to your local machine.
+Fork = Creating your own copy of someone else's repository on GitHub.
+```
+## When would you clone vs fork?
+```bash
+Clone when you want to work on a repository you already have access to.
+Fork when you want to contribute to someone else's repository without direct write access.
+```
+## After forking, how do you keep your fork in sync with the original repo?
+```bash
+First, fetch the latest changes from the original repository (upstream), merge them into my local branch, and then push the updated branch to my fork (origin).
+
+git remote add origin <your-fork-link>
+git remote add upstream <original-repo-link>
+
+git fetch upstream
+git merge upstream/master
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
