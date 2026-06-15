@@ -30,5 +30,43 @@
 ## Add all branching commands to your git-commands.md
 
 ```bash
+ubuntu@ip-172-31-47-106:~$ git branch
+* master
+
+ubuntu@ip-172-31-47-106:~$ git checkout -b feature-1
+Switched to a new branch 'feature-1'
+
+ubuntu@ip-172-31-47-106:~$ git branch
+* feature-1
+  master
+
+ubuntu@ip-172-31-47-106:~$ git checkout -b feature-2
+Switched to a new branch 'feature-2'
+
+ubuntu@ip-172-31-47-106:~$ git branch
+  feature-1
+* feature-2
+  master
+
+ubuntu@ip-172-31-47-106:~$ git switch feature-1
+Switched to branch 'feature-1'
+
+ubuntu@ip-172-31-47-106:~$ git branch
+* feature-1
+  feature-2
+  master
+
+ubuntu@ip-172-31-47-106:~$ touch feature-1.py
+
+ubuntu@ip-172-31-47-106:~$ git add feature-1.py
+
+ubuntu@ip-172-31-47-106:~$ git commit -m "feature ready in feature-1 branch"
+[feature-1 fc9234c] feature ready in feature-1 branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature-1.py
+
+ubuntu@ip-172-31-47-106:~$ git log --oneline
+fc9234c (HEAD -> feature-1) feature ready in feature-1 branch
+ef937f0 (origin/master, master, feature-2) files
 
 ```
