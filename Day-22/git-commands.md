@@ -29,6 +29,7 @@ git stash "Temporarily saves uncommited changes"
 git stash pop "Restore stashed changes"
 git branch -a "Shows both local and remote branches."
 git log --oneline --decorate --all "See all commits from all branches along with branch names and HEAD pointers in a compact view."
+git push origin --all "Pushes all the local branches to github"
 
 Fast-Forward - A fast forwards happens when local branch has no new commit and git can simply move the branch pointer forward.
 
