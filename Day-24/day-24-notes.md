@@ -10,5 +10,30 @@
 - What is a merge conflict? (try creating one intentionally by editing the same line in both branches)
 
 ```bash
+git checkout -b feature-login
+echo "Checking bug in login feature" >> login-feature-test-1.js
+echo "fixed bug in login feature" >> login-feature-test-1.js
+git add login-feature-test-1.js
+git commit -m "login feature fixed"
+git switch master
+git merge feature-login
 
+Git performed a Fast-Forward merge because the master branch had no new commits, so Git simply moved the master pointer to the latest commit of feature-login.
+
+
+git checkout -b signup-feature
+echo "fixed signup feature" >> signup-feature-test-1.js
+git add signup-feature-test-1.js
+git commit -m "signup-feature-test-1.js"
+git switch master
+echo "testing bug fixed in signup feature" >> signup-feature-test-v1.js
+git add signup-feature-test-v1.js
+git commit -m "signup-feature-test-v1.js"
+git merge signup-feature
+Merge made by the 'ort' strategy.
+ signup2.js | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 signup2.js
+
+Git created a Merge Commit because both master and feature-signup had independent commits before the merge.
 ```
