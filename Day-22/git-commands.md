@@ -27,6 +27,8 @@ git diff --staged "Shows unstaged changes"
 git merge BRNACH_NAME "Merges another branch into current branch"
 git stash "Temporarily saves uncommited changes"
 git stash pop "Restore stashed changes"
+git branch -a "Shows both local and remote branches."
+git log --oneline --decorate --all "See all commits from all branches along with branch names and HEAD pointers in a compact view."
 
 Fast-Forward - A fast forwards happens when local branch has no new commit and git can simply move the branch pointer forward.
 
