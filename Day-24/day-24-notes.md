@@ -122,7 +122,6 @@ Above is usually done``, after you finish working on your feature-dashboard bran
 1. What does git rebase actually do to your commits?
 
 Suppose:
-
 main:
 A --- B --- C --- G
 
@@ -151,9 +150,7 @@ E != E'
 F != F'
 
 The commit hashes change.
-
 That's why we say:
-
 Rebase rewrites history by creating new versions of your commits on top of another branch.
 
 2. How is history different from a Merge?
@@ -170,6 +167,7 @@ A --- B --- C --- G
               D --- E --- F
 Branch structure is preserved.
 Merge commit M is created.
+
 Rebase
 git checkout feature
 git rebase main
@@ -180,44 +178,35 @@ A --- B --- C --- G --- D' --- E' --- F'
 Linear history.
 No merge commit.
 Old commits replaced by new ones.
+
 3. Why should you NEVER rebase commits that are already shared?
 
 Imagine you pushed:
-
 feature:
-
 A --- B --- C --- D --- E
 
 Your teammate pulled:
-
 A --- B --- C --- D --- E
 
 Now you run:
-
 git rebase main
 
 Git creates:
-
 A --- B --- C --- G --- D' --- E'
 
 and:
-
 git push --force
 
 Now:
-
 GitHub has D' E'
 Your teammate still has D E
 
 Git sees:
-
 D != D'
 E != E'
 
 Same changes.
-
 Different commits.
-
 This leads to:
 
 Conflicts
@@ -226,71 +215,61 @@ Difficult merges
 Example
 
 Teammate:
-
 A-B-C-D-E
 
 Remote:
-
 A-B-C-G-D'-E'
 
 Now Git gets confused because:
-
 D and D'
-
 look like different commits.
-
 Rule
 
-✅ Rebase local commits
-❌ Don't rebase public/shared commits
+Only Rebase local commits
+Don't rebase public/shared commits
+
 Safe Rule
 If ONLY YOU use the branch
+USE:
 git rebase main
 ✅ Safe
 Never rebase commits that other people already have, because rebase changes commit IDs and causes everyone's history to diverge.
 
 4. When to use Rebase vs Merge?
 Use Rebase
-
 When:
-
 Working on your own feature branch
 Updating with latest main
 Cleaning commit history
 Before opening a Pull Request
 
 Example:
-
 git checkout feature
 git fetch origin
 git rebase origin/main
 
 Result:
-
 A-B-C-G-D'-E'-F'
-
 Clean history.
 
 Use Merge
-
 When:
-
 Combining completed features into main
 Working with shared branches
 You want to preserve branch history
 
 Example:
-
 git checkout main
 git merge feature
 
 Result:
 
-                 M
-               /   \
-A-B-C-G
-     \
+         M
+       /   \
+A-B-C-G    |
+     \     |
       D-E-F
+Use Rebase on your own private feature branches to keep history clean. Use Merge on shared branches to preserve history and avoid disrupting other collaborator
 ```
 
 
