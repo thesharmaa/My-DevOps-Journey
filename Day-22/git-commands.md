@@ -38,8 +38,12 @@ git stash -u "Saves Tracked + Untracked files only"
 git stash pop "restores the changes and removes the stash entry if the operation succeeds"
 git stash apply "estores stashed changes without deleting the stash"
 git ls-files "To view tracked files"
+git reset --soft HEAD~1 "undo commit, keep staged"
+git reset --mixed HEAD~1 "undo commit, unstage changes"
+git reset --hard HEAD~1 "undo commit + erase all changes in file"
+git revert HASH_COMMIT "Undoes only that specific commit and creates a new "revert commit""
 
-
+git reflog
 
 
 
