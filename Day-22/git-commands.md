@@ -31,6 +31,20 @@ git branch -a "Shows both local and remote branches."
 git log --oneline --decorate --all "See all commits from all branches along with branch names and HEAD pointers in a compact view."
 git push origin --all "Pushes all the local branches to github"
 git push origin --delete BRANCH_NAME "To delete a branch"
+git log --graph --oneline --decorate --all → "Used to visualize commit history, branches, and merges."
+git reflog → "Used to track local HEAD movements and recover commits after operations like rebase, reset, or checkout."
+git stash "Saves Tracked files only"
+git stash -u "Saves Tracked + Untracked files only"
+git stash pop "restores the changes and removes the stash entry if the operation succeeds"
+git stash apply "estores stashed changes without deleting the stash"
+git ls-files "To view tracked files"
+
+
+
+
+
+
+
 
 
 Fast-Forward - A fast forwards happens when local branch has no new commit and git can simply move the branch pointer forward.
