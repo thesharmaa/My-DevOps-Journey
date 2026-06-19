@@ -80,3 +80,10 @@ Result:
 
 A --- B --- C --- D'
 ```
+
+
+
+Imagine we have a simple starting point. You have the main branch with commits A, B, and C. Then you create a feature branch from C, where you add commits D and E. Meanwhile, another developer adds commits F and G to main.
+In a merge, when you bring those changes together, Git will create a new merge commit. So, you'd see a branch where everything diverged and then rejoined—keeping a "forked" history.
+In a rebase, instead of a merge commit, Git replays your commits on top of the latest main. So, your feature branch now appears like a straight line after the latest main, as if you built your work on top of those new commits all along.
+In short: merge keeps a full branching history with a "merge commit," while rebase makes it look like a clean, linear progression. Both are useful—just depends on what kind of history you want to preserve
