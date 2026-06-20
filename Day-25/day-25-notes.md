@@ -125,7 +125,75 @@ Answer in your notes:
 | When to use | Local commits, before push, rewriting or cleaning history | After push, in shared branches, safely undo changes |
 ```
 
+# Brnching strategy
+```bash
+# Branching Strategies
 
+---
+
+## 1. GitFlow
+
+GitFlow uses multiple long-lived branches:
+- main → Production-ready code
+- development →
+- features
+- release
+- hotfix
+
+In GitFlow you typically start with main branch. From there, you create a development branch. All the feature branches branch off from develop, & once a feature is ready, it gets merged back to development branch.
+
+Now, when we are ready for release we create a release branch off of development branch.
+
+After it's stable, we merge it into main, and also back to development to keep things in sync.
+
+---
+
+It is used because it provides a clear, organized process for releases. Each release branch is a stable snapshot which helps with scheduled rollouts, audits & compliance & something critical in industries like banking or healthcare.
+
+---
+
+## 2. GitHub Flow
+
+There is only one permanent branch → main or master.
+- Developer creates a feature branch from main.
+- Commit changes
+- Open a pull request
+- Review & merge into main.
+- Deploy immediately.
+
+It is used in Startups, SAAS products, web applications or teams deploying multiple times a day. It is very simple.
+
+---
+
+## 3. Trunk-Based Development (TBD)
+
+Everyone works on main → Also called as Trunk.
+
+Feature branches are:
+- Very short lived (hours or 1-2 days)
+- Merged frequently.
+
+It is used in companies practicing CI/CD
+- High-performing DevOps teams
+- Continuous deployment environments.
+
+★ It provides fastest integration.
+★ Fewer merge conflicts.
+★ Encourages continuous integration.
+★ Faster releases.
+
+---
+
+★ Best strategy for startup shipping fast?
+→ GitHub Flow.
+Because: Simple workflow, Fast Deployment, Ideal for frequent releases & small teams.
+
+★ Which strategy for large team with scheduled releases?
+→ GitFlow.
+Reason: → Dedicated development, release & hotfix branches
+→ Better control over releases
+→ Easier version management for enterprise software
+```
 
 
 
